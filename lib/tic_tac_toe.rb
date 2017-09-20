@@ -46,11 +46,16 @@ class TicTacToe
   input = gets.strip
   @index = input_to_index(input)
 
-  if valid_move?(@board, @index)
-    move(@index, player)
-    display_board
-  else
-    turn
+    if valid_move?(@board, @index)
+      move(@index, player)
+      display_board
+    else
+      turn
+    end
+  end
+
+  def turn_count
+    @board.count {|pos| pos == "X" || pos == "O"}
   end
 
 end
