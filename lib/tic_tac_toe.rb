@@ -73,6 +73,7 @@ class TicTacToe
 
     WIN_COMBINATIONS.each do |arr|
       if position_taken?(arr[0]) && @board[arr[0]] == @board[arr[1]] && @board[arr[1]] == @board[arr[2]]
+        @winningarr = arr
         return arr
       end
     end
@@ -97,6 +98,9 @@ class TicTacToe
     end
   end
 
+  def winner
+    if won?
+      return
 
 
 end
